@@ -14,8 +14,11 @@ function setState(t) { $("#state").textContent = t; }
 async function waitForApp() {
   const frame = $("#frame");
   frame.src = "/app/?embed=editor";
-  for (let i = 0; i < 240; i++) {
+  // The first load fetches SolidCraft's whole browser build (well over 100 MB), so allow minutes
+  // on a slow link before calling the browser unsupported.
+  for (let i = 0; i < 2400; i++) {
     await new Promise((r) => setTimeout(r, 250));
+    if (i === 60) setState("Loading SolidCraft… the first time can take a few minutes on a slow connection");
     try { const a = frame.contentWindow && frame.contentWindow.solidcraft; if (a && a.request) { await a.request("document.revision"); return a; } } catch {}
   }
   throw new Error("SolidCraft did not start in this browser. A browser with WebGPU or WebGL2 is needed.");

@@ -11,6 +11,11 @@ a version heading.
 
 ## [Unreleased]
 
+### Fixed
+- The editor waits up to 10 minutes for SolidCraft to start, with a note after 15 s, instead of reporting an unsupported browser after 60 s while the first download is still running on a slow link (F-C08).
+- `.sc` design files are no longer offered to the browser editor, which can only import JSON designs; they are now turned into a `.json` design by the configured `solidcraft-cli`, like other CAD uploads (F-C08, F-C09).
+- Panels marked hidden (file history, share form) no longer show as empty boxes; the `hidden` attribute now wins over layout rules (F-C04, F-C07).
+
 ## [0.1.0] - 2026-11-08 (not yet published)
 
 ### Added

@@ -1,4 +1,5 @@
 /* solidcraft-collab: one quiet workspace look; colour is reserved for people (avatars) and state. */
+[hidden] { display: none !important; } /* the hidden attribute must win over the display rules below */
 :root {
   --bg: #f4f6f6; --panel: #ffffff; --ink: #18201f; --muted: #5c6967; --rule: #d9e0de;
   --accent: #0f766e; --accent-ink: #ffffff; --accent-soft: #e2f1ef; --danger: #b42318; --warn: #9a5b00;

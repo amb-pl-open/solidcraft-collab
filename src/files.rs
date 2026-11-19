@@ -86,13 +86,14 @@ pub struct FileEntry {
     pub kind: &'static str,
 }
 
-/// What a file is, for the UI: a SolidCraft design opens in the editor; a CAD file has a
-/// design made from it when the server has a solidcraft-cli.
+/// What a file is, for the UI: a SolidCraft design (`.json`) opens in the editor; a CAD file has
+/// a design made from it when the server has a solidcraft-cli. A `.sc` file is SolidCraft's zip
+/// container, which the browser API cannot import as text, so it is treated like a CAD file.
 pub fn kind_of(path: &str) -> &'static str {
     let ext = path.rsplit_once('.').map(|(_, e)| e.to_ascii_lowercase()).unwrap_or_default();
     match ext.as_str() {
-        "json" | "sc" => "design",
-        "step" | "stp" | "igs" | "iges" | "sldprt" | "f3d" | "f3z" | "ipt" | "iam" | "catpart" | "prt" | "sat" | "sab" | "smt" | "smb" | "pvz" | "fcstd" | "3dm" => "cad",
+        "json" => "design",
+        "sc" | "step" | "stp" | "igs" | "iges" | "sldprt" | "f3d" | "f3z" | "ipt" | "iam" | "catpart" | "prt" | "sat" | "sab" | "smt" | "smb" | "pvz" | "fcstd" | "3dm" => "cad",
         "stl" | "3mf" | "obj" | "glb" | "gltf" => "mesh",
         "dxf" | "svg" | "pdf" | "png" | "jpg" | "jpeg" => "document",
         _ => "other",

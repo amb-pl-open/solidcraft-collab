@@ -552,3 +552,11 @@ async fn sandboxed_converter_cannot_reach_user_systemd() {
     let r = solidcraft_collab::convert::cad_to_design(&cfg, &probe, &proj, "x.step").await;
     assert!(r.is_ok(), "control run should escape (proves the probe works): {r:?}");
 }
+
+#[test]
+fn sc_containers_are_converted_not_opened() {
+    // The browser API imports designs as JSON text; a .sc zip container must go through solidcraft-cli.
+    assert_eq!(solidcraft_collab::files::kind_of("chassis/part.json"), "design");
+    assert_eq!(solidcraft_collab::files::kind_of("chassis/part.sc"), "cad");
+    assert_eq!(solidcraft_collab::files::kind_of("chassis/PART.SC"), "cad");
+}
