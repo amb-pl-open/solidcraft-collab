@@ -4,6 +4,15 @@ A multi-user add-on for [SolidCraft](https://github.com/tangency-labs/solidcraft
 work on the same projects from their browsers, each person on their own part at the same time,
 and everyone sees who is working where.
 
+![Two people editing different parts of one project; the project page shows who is where](docs/screenshots/presence.png)
+
+| | |
+|---|---|
+| ![Editing a part in the embedded SolidCraft editor](docs/screenshots/editor.png) | ![Someone else's part opens view-only](docs/screenshots/locked.png) |
+| ![Versions with restore, and comments](docs/screenshots/history.png) | ![Admin: approvals, teams and roles](docs/screenshots/admin.png) |
+
+*A made-up team. SolidCraft runs unchanged inside the editor page.*
+
 - **Accounts approved by an admin.** People sign up with any email and a password; an admin
   approves them into a team with a role (owner, editor, viewer). No outside identity provider or
   mail service. Passwords are argon2id hashes; sessions are HTTP-only cookies; sign-in is

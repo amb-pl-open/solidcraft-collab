@@ -11,6 +11,9 @@ a version heading.
 
 ## [Unreleased]
 
+### Added
+- Screenshots in the README (docs/screenshots), taken from a demo with made-up people.
+
 ### Fixed
 - The editor waits up to 10 minutes for SolidCraft to start, with a note after 15 s, instead of reporting an unsupported browser after 60 s while the first download is still running on a slow link (F-C08).
 - `.sc` design files are no longer offered to the browser editor, which can only import JSON designs; they are now turned into a `.json` design by the configured `solidcraft-cli`, like other CAD uploads (F-C08, F-C09).
