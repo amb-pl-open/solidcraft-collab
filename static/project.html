@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project · {site}</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <div class="row spread">
+    <div><a href="/app.html">← Projects</a><h1 id="title">Project</h1><span class="muted" id="sub"></span></div>
+    <div class="row" id="here"></div>
+  </div>
+  <div id="msg"></div>
+  <div class="grid-2">
+    <section class="panel">
+      <div class="row spread"><h2>Parts and files</h2>
+        <div class="row" id="actions">
+          <button id="new-design" class="primary">New design</button>
+          <label class="btn">Upload files<input id="upload" type="file" multiple hidden></label>
+        </div>
+      </div>
+      <p class="muted" id="cad-note" hidden>SolidWorks, Fusion, Inventor, CATIA, STEP and other CAD files you upload also get a design made from them, ready to open.</p>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Who's on it</th><th></th></tr></thead><tbody id="files"></tbody></table></div>
+    </section>
+    <aside class="panel">
+      <h2>Activity</h2>
+      <div class="feed" id="feed"><span class="muted">Live: saves, comments and edits appear here.</span></div>
+    </aside>
+  </div>
+  <section class="panel" id="detail" hidden>
+    <div class="row spread"><h2 id="d-title"></h2><button id="d-close">Close</button></div>
+    <div class="grid-2">
+      <div><h2>Versions</h2><div class="table-wrap"><table><tbody id="d-versions"></tbody></table></div></div>
+      <div><h2>Comments</h2><div class="feed" id="d-comments"></div>
+        <form class="row" id="d-form"><input id="d-body" placeholder="Write a comment" style="flex:1" maxlength="4000" required><button class="primary">Send</button></form></div>
+    </div>
+  </section>
+  <section class="panel" id="members-panel">
+    <div class="row spread"><h2>Who can open this project</h2></div>
+    <div class="row" id="members"></div>
+    <form class="row" id="share" hidden><select id="share-who"></select><button>Share with this person</button></form>
+  </section>
+</main>
+<script src="/common.js"></script>
+<script src="/js/project.js"></script>
+</body>
+</html>

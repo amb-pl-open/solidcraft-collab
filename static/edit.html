@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="editor">
+<div class="edbar">
+  <a href="#" id="back">← Project</a>
+  <span class="title" id="name"></span>
+  <span class="state muted" id="state">Starting SolidCraft…</span>
+  <span style="flex:1"></span>
+  <span class="row" id="people"></span>
+  <button id="take" hidden>Edit when free</button>
+  <button id="save" class="primary" disabled>Save version</button>
+</div>
+<div class="edwrap">
+  <div class="banner" id="banner" hidden></div>
+  <iframe id="frame" title="SolidCraft editor" allow="fullscreen"></iframe>
+</div>
+<script src="/common.js"></script>
+<script src="/js/edit.js"></script>
+</body>
+</html>

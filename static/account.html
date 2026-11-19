@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account · {site}</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Your account</h1>
+  <div id="msg"></div>
+  <section class="panel">
+    <div class="row" id="who"></div>
+    <div id="teams" class="muted"></div>
+  </section>
+  <section class="panel">
+    <h2>Change password</h2>
+    <form class="stack" id="pw">
+      <label>Current password <input id="cur" type="password" required autocomplete="current-password"></label>
+      <label>New password (at least 10 characters) <input id="new" type="password" minlength="10" required autocomplete="new-password"></label>
+      <button class="primary">Change password</button>
+    </form>
+  </section>
+</main>
+<script src="/common.js"></script>
+<script src="/js/account.js"></script>
+</body>
+</html>

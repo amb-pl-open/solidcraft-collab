@@ -1,0 +1,8 @@
+# pattern (extended regex on the changed path)	required doc	level (error|warn)	why
+^src/|^static/	CHANGELOG.md	error	every code change gets a line under [Unreleased]
+^src/|^static/	docs/features.md	error	update the row of each feature touched
+^src/(auth|api|live|files|convert|lib)\.rs$	docs/security.md	error	security-sensitive file: add a review-log row
+^static/(common\.js|js/index\.js)$	docs/security.md	error	security-sensitive file: add a review-log row
+^src/config\.rs$	README.md	error	settings changed: update the settings table
+^static/	docs/user-guide.md	warn	visible behaviour may have changed: check the user guide
+^src/[a-z_]+\.rs$	docs/architecture.md	warn	check whether modules or data flow changed

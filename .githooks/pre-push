@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Refuse a push whose branch doesn't document its changes (see CONTRIBUTING.md).
+# Bypass only with the maintainer's agreement: git push --no-verify
+base="${COLLAB_DOCS_BASE:-main}"
+if [ "$(git rev-parse --abbrev-ref HEAD)" = "$base" ]; then exit 0; fi
+exec "$(git rev-parse --show-toplevel)/scripts/check-docs.sh" "$base"

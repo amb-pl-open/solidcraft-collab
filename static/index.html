@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="center">
+  <div class="panel auth">
+    <h1 id="site">Sign in</h1>
+    <div id="msg"></div>
+    <form class="stack" id="login">
+      <label>Email <input id="email" type="email" autocomplete="username" required></label>
+      <label>Password <input id="password" type="password" autocomplete="current-password" required></label>
+      <button class="primary" type="submit">Sign in</button>
+    </form>
+    <p class="muted">New here? <a href="#" id="show-signup">Ask for an account</a></p>
+    <form class="stack" id="signup" hidden>
+      <h2>Ask for an account</h2>
+      <p class="muted">Any email works. An admin approves your account before you can sign in.</p>
+      <label>Your name <input id="s-name" required maxlength="60" autocomplete="name"></label>
+      <label>Email <input id="s-email" type="email" required autocomplete="email"></label>
+      <label>Password (at least 10 characters) <input id="s-password" type="password" minlength="10" required autocomplete="new-password"></label>
+      <button class="primary" type="submit">Send request</button>
+      <a href="#" id="show-login">Back to sign in</a>
+    </form>
+  </div>
+</div>
+<script src="/common.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

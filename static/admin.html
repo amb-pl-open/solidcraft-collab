@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · {site}</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Admin</h1>
+  <div id="msg"></div>
+  <section class="panel">
+    <h2>Waiting for approval</h2>
+    <div class="table-wrap"><table><thead><tr><th>Person</th><th>Asked</th><th>Team</th><th>Role</th><th></th></tr></thead><tbody id="pending"></tbody></table></div>
+  </section>
+  <section class="panel">
+    <div class="row spread"><h2>Teams</h2>
+      <form class="row" id="new-team"><input id="team-name" placeholder="New team name" required maxlength="60"><button class="primary">Create team</button></form></div>
+    <div id="teams"></div>
+  </section>
+  <section class="panel">
+    <h2>Everyone</h2>
+    <div class="table-wrap"><table><thead><tr><th>Person</th><th>Status</th><th>Teams</th><th></th></tr></thead><tbody id="users"></tbody></table></div>
+  </section>
+</main>
+<script src="/common.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>
